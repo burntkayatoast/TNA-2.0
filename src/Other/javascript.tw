@@ -111,10 +111,10 @@ Setting.addList("fontSize", {
 
 
 // change font family
-var settingFontFamily = ["serif","sans-serif","openDyslexic"];
+var settingFontFamily = ["serif","sans-serif","open dyslexic"];
 var fontFamily = function() {
 	var $html = $("html");
-		$html.removeClass("serif sansserif opendyslexic");
+		$html.removeClass("serif sansSerif openDyslexic");
 	switch (settings.fontFamily) {
 		case "sans-serif":
 			$html.addClass("sansserif");
@@ -122,15 +122,15 @@ var fontFamily = function() {
 		case "serif":
 			$html.addClass("serif");
 			break;
-			case "openDyslexic":
-			$html.addClass("opendyslexic");
+		case "open dyslexic":
+			$html.addClass("openDyslexic");
 			break;
 	}
 };
 Setting.addList("fontFamily", {
 	label		: "Change font style",
 	list		: settingFontFamily,
-	default: "sans-serif",
+	default		: "sans-serif",
 	onInit		: fontFamily,
 	onChange	: fontFamily
 });
