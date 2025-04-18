@@ -1,0 +1,29 @@
+:: StoryInterface
+<!-- https://www.motoslave.net/sugarcube/2/docs/#special-passage-storyinterface --> 
+<!-- take note of 'data-init-passage' and 'data-passage' --> 
+<div id="interface">
+    <div id="header">
+        <div id="top-links">
+            <div id="back">go back.</div>
+            <div id="saves">saves.</div>
+            <div id="settings">settings.</div>
+            <div id="restart">restart.</div>
+            <div id="archive" data-passage="archive"></div>
+            <div id="profile" data-passage="profile"></div>
+            <div id="return" data-passage="return"></div>
+        </div>
+    </div>
+    <!-- you must have one element with #id of 'passages' --> 
+    <div id="passage-container">
+        <div id="passages"></div>
+    </div>
+</div>
+
+:: archive
+<<link "archive." "archive_page">><</link>>
+:: profile
+<<link "profile." "profile_page">><</link>>
+:: return
+<<if tags().includes('noreturn')>>\
+    <<link "return." $return>><</link>>
+<</if>>

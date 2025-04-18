@@ -1,0 +1,176 @@
+:: StoryScript [script]
+
+// reset passage to top
+$(document).on(":passagedisplay", function() {
+	$("#passages").scrollTop(0);
+});
+
+// Handy Dandy stuff
+$(document).ready(function() {
+	$("#saves").click(function() {
+		UI.saves();
+	});	
+	$("#settings").click(function() {
+		UI.settings();
+	});
+	$("#restart").click(function() {
+		UI.restart();
+	});	
+    $("#back").click(function() {
+        Engine.backward();
+    });
+    $("#mobile-back").click(function() {
+        Engine.backward();
+    });
+});
+
+// to avoid including passages tagged 'noreturn' when returning to game
+$(document).on(':passagestart', function (ev) {
+    if (!ev.passage.tags.includes('noreturn')) {
+        State.variables.return = ev.passage.title;
+    }
+});
+
+$(document).on(':dialogopen', function (ev) {
+    if (ev.dialog === 'saves') {
+        $('#ui-dialog-body > h3').remove(); // Remove the "In Browser" text
+    }
+});
+
+// Autosave configuration
+Config.saves.maxAutoSaves = 1; // Enable autosaving with one autosave slot
+
+
+// force fullscreen portrait mode on mobile
+function lock (orientation) {
+  // Go into full screen first
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) {
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) {
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) {
+    document.documentElement.msRequestFullscreen();
+  }
+
+  // Then lock orientation
+  screen.orientation.lock(orientation);
+} 
+
+
+/*--------- SETTINGS -------- */
+// change font size 
+var settingFontSize = ["16px", "17px", "18px", "19px", "20px", "21px", "22px"];
+var resizeFont = function() {
+	var size = document.getElementById('passages');
+
+    switch (settings.fontSize) { 
+		case "16px":
+			size.style.fontSize = "16px";
+			break;
+	}
+	switch (settings.fontSize) {
+		case "17px":
+			size.style.fontSize = "17px";
+			break;
+	}
+    switch (settings.fontSize) { 
+		case "18px":
+			size.style.fontSize = "18px";
+			break;
+	}
+    switch (settings.fontSize) {
+		case "19px":
+			size.style.fontSize = "19px";
+			break;
+	}
+    switch (settings.fontSize) {
+		case "20px":
+			size.style.fontSize = "20px";
+			break;
+	}
+    switch (settings.fontSize) {
+		case "21px":
+			size.style.fontSize = "21px";
+			break;
+	}
+    switch (settings.fontSize) {
+		case "22px":
+			size.style.fontSize = "22px";
+			break;
+	}
+};
+Setting.addList("fontSize", {
+	label		: "Change Font Size",
+	list		: settingFontSize,
+    default     : "16px",
+	onInit		: resizeFont,
+	onChange	: resizeFont
+});
+
+
+// change font family
+var settingFontFamily = ["serif","sans-serif","openDyslexic"];
+var fontFamily = function() {
+	var $html = $("html");
+		$html.removeClass("serif sansserif opendyslexic");
+	switch (settings.fontFamily) {
+		case "sans-serif":
+			$html.addClass("sansserif");
+			break;
+		case "serif":
+			$html.addClass("serif");
+			break;
+			case "openDyslexic":
+			$html.addClass("opendyslexic");
+			break;
+	}
+};
+Setting.addList("fontFamily", {
+	label		: "Change font style",
+	list		: settingFontFamily,
+	default: "sans-serif",
+	onInit		: fontFamily,
+	onChange	: fontFamily
+});
+
+
+// change theme
+var settingThemeNames = ["Dark", "Light"];
+var settingThemeHandler = function () {
+	var $html = $("html");
+	$html.removeClass("light");
+	switch (settings.theme) {
+	case "Light":
+		$html.addClass("light");
+		break;
+	}
+};
+Setting.addList("theme", {
+	label    : "Switch display mode",
+	list     : settingThemeNames,
+	default	 : "Dark",
+	onInit   : settingThemeHandler,
+	onChange : settingThemeHandler
+});
+
+
+// toggle content warning 
+Setting.addToggle("content-warning", {
+    label: "content warning",
+    default: true
+});
+
+
+// notify.min.js, for SugarCube 2, by Chapel
+// v1.1.1, 2024-07-22, 336675ff2cabe5f729a5f30d86aa409cc8432726
+;!function(){var s=/\d+m?s$/;function a(s,a,e){"string"==typeof s&&("number"!=typeof a&&(a=!1),$(document).trigger({type:":notify",message:s,delay:a,class:e||""}))}$(document.body).append("<div id='notify'></div>"),$(document).on(":notify",(function(s){s.message&&"string"==typeof s.message&&(s.message.trim(),s.class?"string"==typeof s.class?s.class="open macro-notify "+s.class:Array.isArray(s.class)?s.class="open macro-notify "+s.class.join(" "):s.class="open macro-notify":s.class="open macro-notify",s.delay?("number"!=typeof s.delay&&(s.delay=Number(s.delay)),Number.isNaN(s.delay)&&(s.delay=2e3)):s.delay=2e3,$("#notify").empty().wiki(s.message).addClass(s.class),setTimeout((function(){$("#notify").removeClass()}),s.delay))})),Macro.add("notify",{tags:null,handler:function(){var e=this.payload[0].contents,t=!1,i=!1;if(this.args.length>0){var n=s.test(this.args[0]);"number"==typeof this.args[0]||n?(t=n?Util.fromCssTime(this.args[0]):this.args[0],i=this.args.length>1&&this.args.slice(1).flat(1/0)):i=this.args.flat(1/0).join(" ")}a(e,t,i)}}),setup.notify=a}();
+// end notify.min.js
+
+
+
+// dialog-api-macro-set.min.js, for SugarCube 2, by Chapel
+// v1.3.0, 2024-07-22, 336675ff2cabe5f729a5f30d86aa409cc8432726
+;Macro.add("dialog",{tags:["onopen","onclose"],handler:function(){var t="",s=null,o=null,n=this.args.length>0?this.args[0]:"",i=this.args.length>1?this.args.slice(1).flat(1/0):[];this.payload.forEach((function(n,i){0===i?t=n.contents:"onopen"===n.name?s=s?s+n.contents:n.contents:o=o?o+n.contents:n.contents})),i.push("macro-"+this.name),Dialog.setup(n,i.join(" ")),Dialog.wiki(t),s&&"string"==typeof s&&s.trim()&&$(document).one(":dialogopened",(function(){$.wiki(s)})),o&&"string"==typeof o&&o.trim()&&$(document).one(":dialogclosed",(function(){$.wiki(o)})),Dialog.open()}}),Macro.add("popup",{handler:function(){if(this.args.length<1)return this.error("need at least one argument; the passage to display");if(!Story.has(this.args[0]))return this.error("the passage "+this.args[0]+"does not exist");var t=this.args[0],s=this.args.length>1?this.args[1]:"",o=this.args.length>2?this.args.slice(2).flat(1/0):[];o.push("macro-"+this.name),Dialog.setup(s,o.join(" ")),Dialog.wiki(Story.get(t).processText()),Dialog.open()}}),Macro.add("dialogclose",{skipArgs:!0,handler:function(){Dialog.close()}});
+// end dialog-api-macro-set.min.js

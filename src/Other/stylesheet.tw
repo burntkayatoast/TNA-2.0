@@ -1,0 +1,254 @@
+:: StoryStylesheet [stylesheet]
+/* FONTS */
+@import url('https://cdn.jsdelivr.net/npm/css.gg/icons/all.css');
+@import url('https://fonts.cdnfonts.com/css/lovelo?styles=25962');
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --lovelo: 'Lovelo', sans-serif;
+  --futura: 'Futura PT', sans-serif;
+  --oldStd: 'Old Standard TT', serif;
+
+  --bg: #121212;
+  --purple: #8c879d;
+  --lightPurple: #d8d4e8;
+  --archiveLink: #c19550;
+  --topLink: #ffc151;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  font-family: var(--futura);
+  letter-spacing: 1px;
+}
+
+#interface {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#passage-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+  height: 50vh;
+  width: 60vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/********************************
+          HEADER + NAV 
+********************************/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em;
+  height: 5vh;
+  border-bottom: 2px solid #222;
+  z-index: 1000;
+  text-align: center;
+}
+
+#top-links {
+  font-family: var(--oldStd);
+  padding: 15px 5px;
+  display: inline-flex;
+  gap: 2em;
+  font-size: 18px;
+}
+
+#top-links div {
+  position: relative;
+  letter-spacing: 2px;
+  color: var(--lightPurple);
+  cursor: pointer;
+  transition: color .3s ease-in-out;
+  padding: 4px;
+}
+
+#top-links div:after {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--archiveLink);
+    transform-origin: bottom left;
+    transition: transform 0.4s ease-out;
+}
+
+#top-links div:hover {color:var(--topLink);}
+#top-links div:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ui-dialog {
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  margin: 1em; 
+  inset: auto !important; 
+  border: 1px solid #222;
+}
+
+#ui-dialog-body {
+  text-align: center;
+  background-color: var(--bg);
+  border: none;
+  overflow-x: hidden;
+}
+
+#ui-dialog-body.saves > h2 {display: none;}
+ 
+#ui-dialog-title {
+  font-family: var(--oldStd);
+  font-size: 22px;
+  text-transform: lowercase;
+  color: var(--lightPurple);
+  text-align: center;
+  background-color: var(--bg);
+  padding: 1.5em;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+#ui-dialog-body.saves #saves-list button {
+  border: none;
+  font-family: var(--futura);
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+}
+
+#ui-dialog-body.saves #saves-list button.load:not(:disabled) {
+  background: none;
+  border: none;
+}
+#ui-dialog-body.saves #saves-list button.delete:not(:disabled) {
+  background: none;
+  border: none;
+}
+
+#ui-dialog-body.saves #saves-list button.load:hover, #ui-dialog-body.saves #saves-list button.save:hover, #ui-dialog-body.saves #saves-list button.delete:hover {
+  background: none !important;
+}
+
+
+#ui-dialog-body.saves #saves-list button.load::before {
+  content: "load"; 
+  font-size: inherit;
+  color: var(--archiveLink); 
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  padding: .5em;
+  background: none;
+  font-family: var(--futura) !important;
+}
+
+#ui-dialog-body.saves #saves-list button.save::before {
+  content: "save"; 
+  font-size: 16px;
+  color: var(--lightPurple); 
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  padding: .5em;
+  background: none;
+  font-family: var(--futura) !important;
+}
+
+#ui-dialog-body.saves #saves-list button.delete::before {
+  content: "delete"; 
+  font-size: inherit;
+  color: var(--lightPurple); 
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  padding: .5em;
+  background: none;
+  font-family: var(--futura) !important;
+}
+
+
+#ui-dialog-body.saves .buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: .5em;
+  padding: .5em;
+}
+#ui-dialog-body.saves button {
+  background: none !important;
+  letter-spacing: 1px;
+  border: none;
+  color: var(--lightPurple);
+}
+
+
+@media screen and (max-width: 1100px) {
+
+}
+
