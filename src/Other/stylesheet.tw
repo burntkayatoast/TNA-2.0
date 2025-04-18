@@ -4,17 +4,36 @@
 @import url('https://fonts.cdnfonts.com/css/lovelo?styles=25962');
 @import url('https://fonts.cdnfonts.com/css/futura-pt');
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@font-face {
+  font-family: "Open Dyslexic";
+  src: url("https://dl.dropbox.com/s/z61rc6kecqzn2pm/OpenDyslexic-Regular.woff2")format("woff2"),
+	url("https://dl.dropbox.com/s/7utsi12557865ty/OpenDyslexic-Regular.woff")format("woff"),
+    url("https://dl.dropbox.com/s/1q7eh2yte04g3z5/OpenDyslexic-Regular.otf")format("otf");
+}
+
 
 :root {
   --lovelo: 'Lovelo', sans-serif;
   --futura: 'Futura PT', sans-serif;
   --oldStd: 'Old Standard TT', serif;
+  --openDyslexic: 'Open Dyslexic', sans-serif;
 
+  /* --purple: #8c879d; */
   --bg: #121212;
-  --purple: #8c879d;
+  --text: #d3d3d3;
+  --purple: #a09ab5;
+  --grey: #3d3d3d;
   --lightPurple: #d8d4e8;
   --archiveLink: #c19550;
   --topLink: #ffc151;
+  --red: #810514;
+}
+
+html.openDyslexic body {
+  font-family: var(--openDyslexic);
+} 
+html.serif body {
+  font-family: var(--oldStd);
 }
 
 html, body {
@@ -26,7 +45,7 @@ html, body {
   align-items: center;
   background-color: var(--bg);
   font-family: var(--futura);
-  letter-spacing: 1px;
+  letter-spacing: .5px;
 }
 
 #interface {
@@ -36,13 +55,13 @@ html, body {
   height: 100%;
 }
 
+#passage-container * {
+  text-align: justify;
+  line-height: 1.4;
+}
 #passage-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5em;
-  height: 50vh;
+  margin-top: 2em;
+  height: 25vw;
   width: 60vw;
   overflow-y: auto;
   overflow-x: hidden;
@@ -70,7 +89,7 @@ a:hover {
   width: 100%;
   padding: 1em;
   height: 5vh;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid var(--grey);
   z-index: 1000;
   text-align: center;
 }
@@ -111,6 +130,9 @@ a:hover {
     transform-origin: bottom left;
 }
 
+/********************************
+            ARCHIVE 
+********************************/
 
 
 
@@ -125,36 +147,17 @@ a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/********************************
+          HEADER + NAV 
+********************************/
+/* basic */
 #ui-dialog {
   position: fixed; 
   top: 50%; 
   left: 50%; 
   margin: 1em; 
   inset: auto !important; 
-  border: 1px solid #222;
+  border: 1px solid var(--grey);
 }
 
 #ui-dialog-body {
@@ -163,19 +166,32 @@ a:hover {
   border: none;
   overflow-x: hidden;
 }
-
-#ui-dialog-body.saves > h2 {display: none;}
  
 #ui-dialog-title {
   font-family: var(--oldStd);
   font-size: 22px;
   text-transform: lowercase;
-  color: var(--lightPurple);
+  color: var(--purple);
   text-align: center;
   background-color: var(--bg);
   padding: 1.5em;
   margin: 0;
   letter-spacing: 3px;
+}
+
+#ui-dialog-titlebar {
+  border-bottom: 1px solid var(--grey);
+}
+
+/* saves */
+#ui-dialog-body.saves > h2 {display: none;}
+
+#ui-dialog-body.saves #saves-list {
+  border-collapse: none;
+  border: none;
+}
+#ui-dialog-body.saves #saves-list td {
+  padding: 12px !important;
 }
 
 #ui-dialog-body.saves #saves-list button {
@@ -233,7 +249,6 @@ a:hover {
   font-family: var(--futura) !important;
 }
 
-
 #ui-dialog-body.saves .buttons {
   display: flex;
   justify-content: flex-start;
@@ -244,10 +259,75 @@ a:hover {
   background: none !important;
   letter-spacing: 1px;
   border: none;
-  color: var(--lightPurple);
+  color: var(--purple);
+  transition: color .3s ease-in-out;
+
+}
+
+/* settings */
+#ui-dialog-body.settings {
+  text-align: left !important;
+  font-size: 18px;
+  padding: 1.5em !important;
+}
+
+#ui-dialog-body.settings button, #ui-dialog-body.restart button {
+  background: none;
+  border: none;
+  text-transform: lowercase;
+  color: var(--purple);
+  letter-spacing: 2px;
+  transition: color .3s ease-in-out;
+}
+
+#ui-dialog-body.settings button:hover, #ui-dialog-body.saves button:hover {
+  color: var(--archiveLink) !important;
+}
+
+#ui-dialog-body.settings .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#ui-dialog-body.settings button[id|="setting-control"].enabled {
+  background-color: var(--purple);
+  border: 1px solid var(--grey);
+  transition: .3s ease-in-out;
+}
+#ui-dialog-body.settings button[id|="setting-control"].enabled:hover {
+  border: 1px solid var(--grey);
+  background: none;
+}
+
+/* restart */
+#ui-dialog-body.restart button:hover {
+  color: var(--archiveLink) !important;
+}
+
+#ui-dialog-body.restart {
+  padding: 1.5em !important;
+}
+
+/* close */
+#ui-dialog-close {
+  background: none;
+  font-size: 18px;
+  border: none;
+  transition: color .3s ease-in-out;
+}
+
+#ui-dialog-close:hover {
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: var(--topLink);
 }
 
 
+
+/********************************
+              MOBILE
+********************************/
 @media screen and (max-width: 1100px) {
 
 }
