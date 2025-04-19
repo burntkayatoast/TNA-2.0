@@ -27,49 +27,64 @@ You have $hair_len, $hair_type, $hair_colour hair. Your eyes are $eyes and you h
 </div>
 <div class="divider"></div>
 <div class="collapsible-container">
-  <button class="collapsible"><span>01 ilya</span></button>\
+  <button class="collapsible"><span>01 ilya Roson</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+        ''Relationship:'' They betrayed you and left you for dead. It's safe to say that they're no longer in your good graces at the moment. 
+
+        ''Description:'' They have shoulder-length, wavy, moondust hair with eyes of grey and skin like porcelain. They stand at 5'11. Their palms are scarred, something they keep hidden under a pair of worn fingerless gloves. Something had happened to them when they were young. Something they refused to tell you.
+
+        Ilya is a spy. A skilled individual in infiltration and extraction. When The Court needed someone to get information, they were always the person they went to. Now, you learn that they've been playing you the entire time you've known them, having revealed themself as an Enforcer of The Order when they lead you to an ambush, like lamb to the slaughter. 
+    </div>
+  </div>\
+
+  <button class="collapsible"><span>02 rhian scott</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+    ''Relationship:'' They shot at you, shot the guy you needed, then ran you over with their car. You find them infuriating but they think you're interesting.
+
+    ''Description:'' <<if $r_gender is "female">>They have long<<else>>short<</if>>, dark brown, curly hair with eyes like amber and skin kissed by the sun. They stand at 5'8. There's a beauty mark just below the underside of their left eye and a small scar marking their right cheek.
+
+    Rhian is a Red Dahlia—a thug and a criminal. They're sly, one with a sharp tongue and a sharper blade. 
+    </div>
+  </div>\
+
+  <button class="collapsible"><span>03 vira duval</span></button>\
   <div class="content">
     <div class="content-inner">\
       
     </div>
   </div>\
 
-  <button class="collapsible"><span>02 rhian</span></button>\
+  <button class="collapsible"><span>04 Aurius duval</span></button>\
   <div class="content">
     <div class="content-inner">\
       
     </div>
   </div>\
 
-  <button class="collapsible"><span>03 vira</span></button>\
+  <button class="collapsible"><span> 05 alzurahm</span></button>\
   <div class="content">
     <div class="content-inner">\
       
     </div>
   </div>\
 
-  <button class="collapsible"><span> 04 alzurahm</span></button>\
+  <button class="collapsible"><span>06 Tiberius</span></button>\
   <div class="content">
     <div class="content-inner">\
       
     </div>
   </div>\
 
-  <button class="collapsible"><span>05 Tiberius</span></button>\
+  <button class="collapsible"><span>07 Faustus</span></button>\
   <div class="content">
     <div class="content-inner">\
       
     </div>
   </div>\
 
-  <button class="collapsible"><span>06 Faustus</span></button>\
-  <div class="content">
-    <div class="content-inner">\
-      
-    </div>
-  </div>\
-
-  <button class="collapsible"><span> 07 dahlia</span></button>\
+  <button class="collapsible"><span> 08 dahlia</span></button>\
   <div class="content">
     <div class="content-inner">\
       

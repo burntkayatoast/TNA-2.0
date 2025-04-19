@@ -1,4 +1,22 @@
 :: StoryScript [script]
+$(document).on(":passagedisplay", function () {
+  console.log("Passage displayed!"); // Debugging line
+  $('.collapsible').off('click').on('click', function () {
+    console.log('Collapsible clicked!'); // Debugging line
+    $(this).toggleClass('active');
+    var content = $(this).nextAll('.content').first(); // Find the next .content element
+    if (content.length === 0) {
+      console.error("No .content element found for this .collapsible button.");
+      return;
+    }
+    if (content.css('max-height') === '0px' || content.css('max-height') === 'none') {
+      console.log('Content scrollHeight:', content.prop('scrollHeight')); // Debugging line
+      content.css('max-height', content.prop('scrollHeight') + 'px'); // Expand
+    } else {
+      content.css('max-height', '0px'); // Collapse
+    }
+  });
+});
 // reset passage to top
 $(document).on(":passagedisplay", function() {
 	$("#passages").scrollTop(0);

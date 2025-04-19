@@ -12,7 +12,7 @@ Aliquam erat volutpat. Ut dui lacus, dignissim et augue quis, lobortis gravida u
 
 In placerat hendrerit nibh, quis hendrerit arcu ultricies bibendum. Duis nec tortor pulvinar, convallis diam nec, laoreet libero. Nullam eleifend quis massa sit amet lacinia. Nunc vehicula mi nec justo varius, vitae interdum mi vulputate. Praesent lectus massa, finibus et elit at, laoreet facilisis dolor. Sed vulputate sem sed nisl gravida, nec dictum dui ultrices. Etiam at convallis eros. Sed sit amet rutrum ipsum. Nam tincidunt neque id porttitor convallis. Nulla in molestie odio. Donec vel tellus tristique, hendrerit tellus sit amet, pharetra leo. Suspendisse purus nisl, euismod non ex id, condimentum volutpat sapien. Suspendisse non sapien nunc. Ut lacus nulla, consectetur et volutpat et, hendrerit tristique elit. Aenean dictum ultricies metus eget vehicula. Aenean vitae elit sem.
 
-<<set $gamechapter to "prologue">>
+<<set $gamechapter to "Chapter 05">>
 <<link "next" "next_pass">><</link>>
 
 :: next_pass
