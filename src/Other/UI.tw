@@ -3,6 +3,7 @@
 <!-- take note of 'data-init-passage' and 'data-passage' --> 
 <div id="interface">
     <div id="header">
+        <div id="header-title">The Night Abridged</div>
         <div id="top-links">
             <div id="back">go back.</div>
             <div id="saves">saves.</div>
@@ -17,7 +18,28 @@
     <div id="passage-container">
         <div id="passages"></div>
     </div>
+
+    <div id="footer">
+        <div id="bottom-links"> 
+            <div id="mobile-back">go back.</div>
+            <div id="mobile-nav" data-passage="mobile_menu"></div>
+            <div id="return" data-passage="return"></div>
+        </div>
+    </div>
 </div>
+
+:: mobile_menu
+<<link "navigation.">>
+    <<dialog "  menu.">>
+        <div id="navigation-links">\
+        <<link "saves">><<run UI.saves()>><</link>>\
+        <<link "settings">><<run UI.settings()>><</link>>\
+        <<link "restart">><<run UI.restart()>><</link>>\
+        <<link "archive" "archive_page">><<run Dialog.close()>><</link>>\
+        <<link "profile" "profile_page">><<run Dialog.close()>><</link>>\
+        </div>
+    <</dialog>>
+<</link>>
 
 :: archive
 <<link "archive." "archive_page">><</link>>
