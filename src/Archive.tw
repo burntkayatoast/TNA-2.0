@@ -1,2 +1,34 @@
 :: archive_page [noreturn]
-what
+<<link "<div class='entry'>the world</div>" "The World">><</link>>
+
+<<link "<div class='entry'>the horrors</div>" "The Horrors">><</link>>
+
+/* <<link "<div class='entry'></div>" "The World">><</link>> */
+
+:: The World [noreturn]
+
+:: The Horrors [noreturn]
+<div class="LTL">There are but three</div>
+
+<<link "<div class='entry'>Alzurahm</div>">>
+<<dialog "Alzurahm">>
+    <div class="LTL">Of Shadow & Void</div>
+    <div class="justify-text">\
+    An Eldritch that you met while young. When a bargain was struck, he became a passanger in your mind—seeing the world as you see it. 
+    
+    Hearing a voice that is not your own may be overwhelming and as time has passed, the voice in yours has learned when to give you your privacy, choosing to lay in wait in the depths of your mind till you ask for him. 
+    </div>
+<</dialog>>
+<</link>>
+
+<<link "<div class='entry'>Korian</div>">>
+<<dialog "Korian">>
+    <div class="LTL">Of Tricks & Lies</div>
+<</dialog>>
+<</link>>
+
+<<link "<div class='entry'>Geishel</div>">>
+<<dialog "the underbelly">>
+    <div class="LTL">Of Death & Decay</div>
+<</dialog>>
+<</link>>

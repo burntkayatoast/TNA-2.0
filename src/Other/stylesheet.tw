@@ -3,7 +3,7 @@
 @import url('https://cdn.jsdelivr.net/npm/css.gg/icons/all.css');
 @import url('https://fonts.cdnfonts.com/css/lovelo?styles=25962');
 @import url('https://fonts.cdnfonts.com/css/futura-pt');
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 @font-face {
   font-family: "Open Dyslexic";
   src: url("https://dl.dropbox.com/s/z61rc6kecqzn2pm/OpenDyslexic-Regular.woff2")format("woff2"),
@@ -15,7 +15,7 @@
 :root {
   --lovelo: 'Lovelo', sans-serif;
   --futura: 'Futura PT', sans-serif;
-  --oldStd: 'Old Standard TT', serif;
+  --crimsonTxt: "Crimson Text", serif;
   --openDyslexic: 'Open Dyslexic', sans-serif;
 
   /* --purple: #8c879d; */
@@ -33,7 +33,7 @@ html.openDyslexic body {
   font-family: var(--openDyslexic);
 } 
 html.serif body {
-  font-family: var(--oldStd);
+  font-family: var(--crimsonTxt);
 }
 
 html, body {
@@ -55,18 +55,19 @@ html, body {
   height: 100%;
 }
 
-#passage-container * {
-  text-align: justify;
-  line-height: 1.4;
-}
 #passage-container {
-  margin-top: 2em;
-  height: 25vw;
+  margin-top: 2.5em;
+  max-height: 25vw;
   width: 60vw;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   padding: 1em;
+}
+
+#passages * {
+  text-align: justify;
+  line-height: 1.4;
 }
 
 a {
@@ -93,9 +94,10 @@ a:hover {
   z-index: 1000;
   text-align: center;
 }
+#header-title {display: none;}
 
 #top-links {
-  font-family: var(--oldStd);
+  font-family: var(--crimsonTxt);
   padding: 15px 5px;
   display: inline-flex;
   gap: 2em;
@@ -111,7 +113,7 @@ a:hover {
   padding: 4px;
 }
 
-#top-links div:after {
+#top-links div:after, #bottom-links div:after {
     content: ' ';
     position: absolute;
     width: 100%;
@@ -130,14 +132,62 @@ a:hover {
     transform-origin: bottom left;
 }
 
+/* footer */
+#footer {display: none;}
+
 /********************************
             ARCHIVE 
 ********************************/
+.entry {
+  background-color: var(--purple);
+  color: var(--bg);
+  padding: 1em;
+  text-align: center !important;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 110%;
+  letter-spacing: 5px;
+  font-family: var(--lovelo);
+  border-radius: 3px;
+  transition: .3s ease-in-out;
+}
 
+.entry:hover {
+  background-color: var(--archiveLink);
+}
 
+.justify-text {
+  text-align: justify;
+} 
 
+.return {
+  font-family: var(--lovelo);
+  color: var(--purple);
+  font-size: 128%;
+  letter-spacing: 3px;
+  text-align: center !important;
+}
 
-
+/********************************
+            DIVIDERS
+********************************/
+/* line text line */
+.LTL {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family:var(--lovelo);
+    letter-spacing: 3px;
+    font-size:1.2em;
+    color: var(--text);
+}
+.LTL:before, .LTL:after {
+    content: '';
+    flex: 1;
+    border-bottom: 1.5px solid var(--topLink); 
+}
+.LTL:not(:empty):before {margin-right: .5em;}
+.LTL:not(:empty):after {margin-left: .5em;}
 
 
 
@@ -148,7 +198,7 @@ a:hover {
 
 
 /********************************
-          HEADER + NAV 
+          DIALOG CONT 
 ********************************/
 /* basic */
 #ui-dialog {
@@ -156,19 +206,22 @@ a:hover {
   top: 50%; 
   left: 50%; 
   margin: 1em; 
+  width: auto;
   inset: auto !important; 
   border: 1px solid var(--grey);
 }
 
 #ui-dialog-body {
+  max-height: 70vh;
   text-align: center;
   background-color: var(--bg);
   border: none;
-  overflow-x: hidden;
+  overflow: auto;
+  font-size: 18px;
 }
  
 #ui-dialog-title {
-  font-family: var(--oldStd);
+  font-family: var(--crimsonTxt);
   font-size: 22px;
   text-transform: lowercase;
   color: var(--purple);
@@ -177,6 +230,7 @@ a:hover {
   padding: 1.5em;
   margin: 0;
   letter-spacing: 3px;
+  font-weight: normal;
 }
 
 #ui-dialog-titlebar {
@@ -229,7 +283,7 @@ a:hover {
 
 #ui-dialog-body.saves #saves-list button.save::before {
   content: "save"; 
-  font-size: 16px;
+  font-size: inherit;
   color: var(--lightPurple); 
   text-transform: lowercase;
   letter-spacing: 2px;
@@ -267,7 +321,7 @@ a:hover {
 /* settings */
 #ui-dialog-body.settings {
   text-align: left !important;
-  font-size: 18px;
+  font-size: 120% !important;
   padding: 1.5em !important;
 }
 
@@ -313,6 +367,7 @@ a:hover {
   background: none;
   font-size: 18px;
   border: none;
+  color: var(--text);
   transition: color .3s ease-in-out;
 }
 
@@ -329,6 +384,83 @@ a:hover {
               MOBILE
 ********************************/
 @media screen and (max-width: 1100px) {
+  #top-links {display: none;}
+  #header-title {
+    display: inline-flex;
+    font-family: var(--lovelo);
+    letter-spacing: 3px;
+    padding: 15px 0;
+    font-size: 130%;
+    color: var(--lightPurple);
+  }
+
+  #passage-container {
+    margin-top: 1em;
+    width: 95vw;
+    max-height: 75vh;
+  }
+
+  #footer {
+    display: block;
+    position: fixed;
+    height: 7vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid var(--grey);
+    text-align: center;
+    z-index: 1000;
+  }
+
+  #bottom-links {
+    display: inline-flex;
+    gap: 1em;
+    font-family: var(--crimsonTxt);
+    padding: 28px 0;
+    margin-left: 2em !important;
+  }
+
+  #bottom-links div {
+    position: relative;
+    letter-spacing: 2px;
+    color: var(--lightPurple);
+    transition: .3s ease-in-out;
+  }
+
+  #bottom-links div:hover:before {
+    color: var(--topLink);
+    content: '';
+  }
+
+
+  #navigation-links a {
+    display: block;
+    color: var(--lightPurple);
+    transition: .4s ease-in-out;
+    margin-bottom: 10px;
+    margin-left: -1.5em;
+    letter-spacing: 3px;
+  }
+
+  #navigation-links a:before {
+    content: '⫸ ';
+    color: transparent;
+    transition: .3s ease-in-out;
+  }
+  #navigation-links a:hover {
+    color: var(--topLink);
+  }
+
+  #navigation-links a:hover:before {
+    content: '⫸ ';
+    color: var(--archiveLink);
+  }
+
+  .entry {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
 }
 
