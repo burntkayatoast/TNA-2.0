@@ -138,53 +138,67 @@ a:hover {
 /********************************
             ARCHIVE 
 ********************************/
+.entries {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.entries a {
+  flex: 1; 
+  display: block; 
+}
+
 .entry {
+  width: 100%; 
   background-color: var(--purple);
-  color: var(--bg);
-  padding: 1em;
-  text-align: center !important;
-  width: 50%;
-  margin: 0 auto;
-  font-size: 110%;
-  letter-spacing: 5px;
   font-family: var(--lovelo);
+  font-size: 110%;
+  padding: 1em;
   border-radius: 3px;
+  text-align: center !important;
+  color: var(--bg);
+  box-sizing: border-box; 
   transition: .3s ease-in-out;
+  word-wrap: break-word;
 }
 
 .entry:hover {
   background-color: var(--archiveLink);
 }
 
+.notify-entry {
+  font-family: var(--lovelo);
+  color:var(--archiveLink);
+  transition:.4s ease-in-out;
+  font-size:93%;
+}
+
 .justify-text {
   text-align: justify;
 } 
 
-.return {
-  font-family: var(--lovelo);
-  color: var(--purple);
-  font-size: 128%;
-  letter-spacing: 3px;
-  text-align: center !important;
-}
+
+
+
 
 /********************************
             DIVIDERS
 ********************************/
 /* line text line */
 .LTL {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family:var(--lovelo);
-    letter-spacing: 3px;
-    font-size:1.2em;
-    color: var(--text);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family:var(--lovelo);
+  letter-spacing: 3px;
+  font-size:1.2em;
+  color: var(--text);
 }
 .LTL:before, .LTL:after {
-    content: '';
-    flex: 1;
-    border-bottom: 1.5px solid var(--topLink); 
+  content: '';
+  flex: 1;
+  border-bottom: 1.5px solid var(--topLink); 
 }
 .LTL:not(:empty):before {margin-right: .5em;}
 .LTL:not(:empty):after {margin-left: .5em;}
@@ -196,6 +210,114 @@ a:hover {
 
 
 
+
+
+
+
+/********************************
+              NOTIFY
+********************************/
+#notify {
+    position: fixed;
+    bottom: -5vh; 
+    width: 100%;
+    max-height: 0; 
+    background: var(--purple);  
+    color: var(--bg);
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0; 
+    overflow: hidden;  
+    transition: max-height 0.4s ease, bottom 0.4s ease, padding 0.4s ease; 
+}
+#notify.open {
+    bottom: 0;  
+    max-height: 5vh;  
+    padding: 2em 0; 
+}
+/********************************
+              MOBILE
+********************************/
+@media screen and (max-width: 1100px) {
+  #top-links {display: none;}
+  #header-title {
+    display: inline-flex;
+    font-family: var(--lovelo);
+    letter-spacing: 3px;
+    padding: 15px 0;
+    font-size: 130%;
+    color: var(--lightPurple);
+  }
+
+  #passage-container {
+    margin-top: 1em;
+    width: 95vw;
+    max-height: 75vh;
+  }
+
+  #footer {
+    display: block;
+    position: fixed;
+    height: 7vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid var(--grey);
+    text-align: center;
+  }
+
+  #bottom-links {
+    display: inline-flex;
+    gap: 1.5em;
+    font-family: var(--crimsonTxt);
+    padding: 28px 0;
+    margin-left: 2em !important;
+  }
+
+  #bottom-links div {
+    position: relative;
+    letter-spacing: 2px;
+    color: var(--lightPurple);
+    transition: .3s ease-in-out;
+  }
+
+  #bottom-links div:hover:before {
+    color: var(--topLink);
+    content: '';
+  }
+
+  #navigation-links a {
+    display: block;
+    color: var(--lightPurple);
+    transition: .4s ease-in-out;
+    margin-bottom: 10px;
+    margin-left: -1.5em;
+    letter-spacing: 3px;
+  }
+
+  #navigation-links a:before {
+    content: '⫸ ';
+    color: transparent;
+    transition: .3s ease-in-out;
+  }
+  #navigation-links a:hover {
+    color: var(--topLink);
+  }
+
+  #navigation-links a:hover:before {
+    content: '⫸ ';
+    color: var(--archiveLink);
+  }
+
+  .entry {
+    font-size: 80%;
+    margin-top: -15px;
+  }
+  .entries { 
+    gap: 5px;
+  }
+
+}
 
 /********************************
           DIALOG CONT 
@@ -377,90 +499,3 @@ a:hover {
   border: none;
   color: var(--topLink);
 }
-
-
-
-/********************************
-              MOBILE
-********************************/
-@media screen and (max-width: 1100px) {
-  #top-links {display: none;}
-  #header-title {
-    display: inline-flex;
-    font-family: var(--lovelo);
-    letter-spacing: 3px;
-    padding: 15px 0;
-    font-size: 130%;
-    color: var(--lightPurple);
-  }
-
-  #passage-container {
-    margin-top: 1em;
-    width: 95vw;
-    max-height: 75vh;
-  }
-
-  #footer {
-    display: block;
-    position: fixed;
-    height: 7vh;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    border-top: 1px solid var(--grey);
-    text-align: center;
-    z-index: 1000;
-  }
-
-  #bottom-links {
-    display: inline-flex;
-    gap: 1em;
-    font-family: var(--crimsonTxt);
-    padding: 28px 0;
-    margin-left: 2em !important;
-  }
-
-  #bottom-links div {
-    position: relative;
-    letter-spacing: 2px;
-    color: var(--lightPurple);
-    transition: .3s ease-in-out;
-  }
-
-  #bottom-links div:hover:before {
-    color: var(--topLink);
-    content: '';
-  }
-
-
-  #navigation-links a {
-    display: block;
-    color: var(--lightPurple);
-    transition: .4s ease-in-out;
-    margin-bottom: 10px;
-    margin-left: -1.5em;
-    letter-spacing: 3px;
-  }
-
-  #navigation-links a:before {
-    content: '⫸ ';
-    color: transparent;
-    transition: .3s ease-in-out;
-  }
-  #navigation-links a:hover {
-    color: var(--topLink);
-  }
-
-  #navigation-links a:hover:before {
-    content: '⫸ ';
-    color: var(--archiveLink);
-  }
-
-  .entry {
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-}
-
