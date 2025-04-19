@@ -3,7 +3,7 @@
 @import url('https://cdn.jsdelivr.net/npm/css.gg/icons/all.css');
 @import url('https://fonts.cdnfonts.com/css/lovelo?styles=25962');
 @import url('https://fonts.cdnfonts.com/css/futura-pt');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 @font-face {
   font-family: "Open Dyslexic";
   src: url("https://dl.dropbox.com/s/z61rc6kecqzn2pm/OpenDyslexic-Regular.woff2")format("woff2"),
@@ -16,6 +16,7 @@
   --lovelo: 'Lovelo', sans-serif;
   --futura: 'Futura PT', sans-serif;
   --crimsonTxt: "Crimson Text", serif;
+  --carrois: "Carrois Gothic", sans-serif;
   --openDyslexic: 'Open Dyslexic', sans-serif;
 
   /* --purple: #8c879d; */
@@ -160,7 +161,7 @@ a:hover {
   color: var(--bg);
   box-sizing: border-box; 
   transition: .3s ease-in-out;
-  word-wrap: break-word;
+  
 }
 
 .entry:hover {
@@ -174,16 +175,8 @@ a:hover {
   font-size:93%;
 }
 
-.justify-text {
-  text-align: justify;
-} 
-
-
-
-
-
 /********************************
-            DIVIDERS
+            TEXT DECOR
 ********************************/
 /* line text line */
 .LTL {
@@ -203,16 +196,70 @@ a:hover {
 .LTL:not(:empty):before {margin-right: .5em;}
 .LTL:not(:empty):after {margin-left: .5em;}
 
+/* text alignment */
+.justify-text {
+  text-align: justify;
+} 
+
+/* idk anymore */
+#ui-dialog-body span {
+  font-family: var(--carrois);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px !important;
+  font-size: medium !important;
+}
 
 
 
 
+/********************************
+            PROFILE
+********************************/
+.profile-container {
+  display: inline-flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1em;
+  gap: 1em;
+  width: 100%;
+}
 
+.profile-selection-tab a { 
+  font-family: var(--crimsonTxt);
+  transition: .4s ease-in-out;
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.1em;
+  padding: 0 2px 6px 2px;
+  font-size: 130%;
+}
 
+.profile-selection-tab a:after { 
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--archiveLink);
+  transform-origin: bottom left;
+  transition: transform .4s ease-in-out;
+}
 
+.profile-selection-tab a:hover {color: var(--archiveLink);}
+.profile-selection-tab a:hover:after { 
+  text-decoration: none;
+  color: var(--archiveLink);
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
-
-
+.profile-selected { 
+  color: var(--topLink);
+}
 
 /********************************
               NOTIFY
@@ -243,10 +290,10 @@ a:hover {
   #header-title {
     display: inline-flex;
     font-family: var(--lovelo);
-    letter-spacing: 3px;
-    padding: 15px 0;
-    font-size: 130%;
+    padding-top: 15px;
+    font-size: 200%;
     color: var(--lightPurple);
+    letter-spacing: 10px;
   }
 
   #passage-container {
@@ -310,7 +357,7 @@ a:hover {
   }
 
   .entry {
-    font-size: 80%;
+    font-size: 90%;
     margin-top: -15px;
   }
   .entries { 
@@ -339,7 +386,6 @@ a:hover {
   background-color: var(--bg);
   border: none;
   overflow: auto;
-  font-size: 18px;
 }
  
 #ui-dialog-title {
@@ -443,7 +489,6 @@ a:hover {
 /* settings */
 #ui-dialog-body.settings {
   text-align: left !important;
-  font-size: 120% !important;
   padding: 1.5em !important;
 }
 

@@ -1,1 +1,7 @@
 :: profile_page [noreturn]
+<div class="profile-container">
+    <span class="profile-selection-tab"> <<link "<span class='profile-selected'>you.</span>">><</link>> </span>
+    <span class="profile-selection-tab"> <<link "stats.">><</link>> </span>
+    <span class="profile-selection-tab"> <<link "relationships.">><</link>> </span>
+</div>
+<div class="LTL">murderer. liar. snake.</div>
