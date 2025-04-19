@@ -6,7 +6,9 @@ Pellentesque vitae suscipit sapien, tempus dictum sem. Integer fringilla porta n
 
 Pellentesque facilisis consectetur dui vitae efficitur. Vivamus sed nisi orci. Duis interdum, odio ut efficitur pharetra, leo est mollis dui, at fringilla nibh dolor ac nunc. Fusce tincidunt interdum est, vel laoreet risus placerat sed. In eu fermentum leo. Nam ipsum eros, vulputate tempor nisi ac, commodo varius tortor. Donec sit amet velit lacinia, congue ante sed, fringilla enim.
 
-Aliquam erat volutpat. Ut dui lacus, dignissim et augue quis, lobortis gravida urna. Mauris non nisi sapien. Donec ut erat purus. Integer scelerisque lacinia tempor. Nullam congue bibendum vehicula. Nulla eget eros nec lorem tristique egestas. Phasellus eu ex elit. Nam fermentum tristique diam, vel placerat mi ultricies a. Curabitur massa ante, feugiat sit amet ornare gravida, condimentum fermentum augue. Sed gravida nulla vitae elit dignissim ornare. Duis quis lacus in elit placerat commodo nec at nunc. Nulla posuere urna ut tempus tempus.
+Aliquam erat volutpat. Ut dui lacus, dignissim et augue quis, lobortis gravida urna. Mauris non nisi sapien. Donec ut erat purus. Integer scelerisque lacinia tempor. Nullam congue bibendum vehicula. Nulla eget eros nec lorem tristique egestas. Phasellus eu ex elit. Nam fermentum tristique diam, vel placerat mi ultricies a. Curabitur massa ante, feugiat sit amet ornare gravida, condimentum fermentum augue. Sed gravida nulla vitae elit dignissim ornare. Duis quis lacus in elit placerat commodo nec at nunc. Nulla posuere urna ut tempus tempus. 
+
+<<link "<span class='notify-entry'>the underbelly</span>">><<notify 3s>>file unlocked: the underbelly<</notify>><</link>>
 
 In placerat hendrerit nibh, quis hendrerit arcu ultricies bibendum. Duis nec tortor pulvinar, convallis diam nec, laoreet libero. Nullam eleifend quis massa sit amet lacinia. Nunc vehicula mi nec justo varius, vitae interdum mi vulputate. Praesent lectus massa, finibus et elit at, laoreet facilisis dolor. Sed vulputate sem sed nisl gravida, nec dictum dui ultrices. Etiam at convallis eros. Sed sit amet rutrum ipsum. Nam tincidunt neque id porttitor convallis. Nulla in molestie odio. Donec vel tellus tristique, hendrerit tellus sit amet, pharetra leo. Suspendisse purus nisl, euismod non ex id, condimentum volutpat sapien. Suspendisse non sapien nunc. Ut lacus nulla, consectetur et volutpat et, hendrerit tristique elit. Aenean dictum ultricies metus eget vehicula. Aenean vitae elit sem.
 
@@ -16,3 +18,5 @@ In placerat hendrerit nibh, quis hendrerit arcu ultricies bibendum. Duis nec tor
 :: next_pass
 
 the save aint working. The chapter should be: $gamechapter
+
+<<set $brassSpirits_entry to true>>
