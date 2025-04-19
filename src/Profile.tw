@@ -1,7 +1,78 @@
 :: profile_page [noreturn]
+<h1>PROFILE</h1>\
 <div class="profile-container">
-    <span class="profile-selection-tab"> <<link "<span class='profile-selected'>you.</span>">><</link>> </span>
-    <span class="profile-selection-tab"> <<link "stats.">><</link>> </span>
-    <span class="profile-selection-tab"> <<link "relationships.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="profile_page"> <<link "<span class='profile-selected'>you.</span>">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="stats_page"> <<link "stats.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="relationship_page"> <<link "relationships.">><</link>> </span>
 </div>
-<div class="LTL">murderer. liar. snake.</div>
+<div class="divider"></div>
+You go by $name $surname, your true name having been lost to you since you woke up with no memory of who you were or where you came from. Since then, you were taken in by The Night Court, trained and raised to be a Shadow—a mercenary solely under the employ of The Court. 
+
+You have $hair_len, $hair_type, $hair_colour hair. Your eyes are $eyes and you have $skin skin. 
+:: stats_page [noreturn]
+<h1>STATS</h1>\
+<div class="profile-container">
+    <span class="profile-selection-tab" data-passage="profile_page"> <<link "you.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="stats_page"> <<link "<span class='profile-selected'>stats.</span>">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="relationship_page"> <<link "relationships.">><</link>> </span>
+</div>
+<div class="divider"></div>
+
+:: relationship_page [noreturn]
+<h1>RELATIONSHIPS</h1>\
+<div class="profile-container">
+    <span class="profile-selection-tab" data-passage="profile_page"> <<link "you.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="stats_page"> <<link "stats.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="relationship_page"> <<link "<span class='profile-selected'>relationships.</span>">><</link>> </span>
+</div>
+<div class="divider"></div>
+<div class="collapsible-container">
+  <button class="collapsible"><span>01 ilya</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      
+    </div>
+  </div>\
+
+  <button class="collapsible"><span>02 rhian</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      
+    </div>
+  </div>\
+
+  <button class="collapsible"><span>03 vira</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      
+    </div>
+  </div>\
+
+  <button class="collapsible"><span> 04 alzurahm</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      
+    </div>
+  </div>\
+
+  <button class="collapsible"><span>05 Tiberius</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      
+    </div>
+  </div>\
+
+  <button class="collapsible"><span>06 Faustus</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      
+    </div>
+  </div>\
+
+  <button class="collapsible"><span> 07 dahlia</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      
+    </div>
+  </div>\
+</div>

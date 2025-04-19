@@ -58,7 +58,7 @@ html, body {
 
 #passage-container {
   margin-top: 2.5em;
-  max-height: 25vw;
+  max-height: 30vw;
   width: 60vw;
   overflow-y: auto;
   overflow-x: hidden;
@@ -201,6 +201,14 @@ a:hover {
   text-align: justify;
 } 
 
+h1 { 
+  text-align: center !important;
+  font-size: 500%;
+  letter-spacing: 5px;
+  margin: 0;
+  color: var(--text);
+}
+
 /* idk anymore */
 #ui-dialog-body span {
   font-family: var(--carrois);
@@ -210,7 +218,13 @@ a:hover {
   font-size: medium !important;
 }
 
-
+/* divider */
+.divider {
+    width: 100%; 
+    height: 1.55px; 
+    background: linear-gradient(to right,#191626, var(--lightPurple), var(--purple),#191626); 
+    border: none;
+}
 
 
 /********************************
@@ -252,13 +266,75 @@ a:hover {
 .profile-selection-tab a:hover {color: var(--archiveLink);}
 .profile-selection-tab a:hover:after { 
   text-decoration: none;
-  color: var(--archiveLink);
+  color: var(--topLink);
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
 .profile-selected { 
-  color: var(--topLink);
+  color: var(--archiveLink);
+}
+
+/* collapsable */
+.collapsible-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.collapsible {
+  background-color: var(--purple);
+  color: var(--bg);
+  width: 75%; 
+  max-width: 75vw;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: background-color 0.3s ease;
+  font-family: var(--lovelo);
+  margin-bottom: 1px; 
+}
+
+.collapsible span { 
+  margin: 0 1.3em;
+  font-size: 110%;
+  letter-spacing: 5px;
+}
+
+.collapsible:hover {
+  background-color: var(--archiveLink);
+}
+
+.collapsible:after {
+  content: '\002B'; 
+  color: var(--bg);
+  font-weight: bold;
+  float: right;
+  margin-right: 15px;
+}
+
+.collapsible.active:after {
+  content: "\2212"; 
+}
+
+.content {
+  width: 75%; 
+  max-width: 75vw;
+  padding: 0; 
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #1b1b1b;
+  color: var(--text);
+  border-top: 1px solid var(--grey);
+}
+
+.content-inner { 
+  padding: 0 20px;
 }
 
 /********************************
@@ -362,6 +438,21 @@ a:hover {
   }
   .entries { 
     gap: 5px;
+  }
+
+  h1 { 
+    font-size: 250%;
+  }
+
+  .collapsible { 
+    width: 100%;
+    max-width: 85vw;
+
+  }
+
+  .content { 
+    width: 100%;
+    max-width: 85vw;
   }
 
 }
