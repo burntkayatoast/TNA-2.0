@@ -1,11 +1,139 @@
 :: archive_page [noreturn]
-<<link "<div class='entry'>the world</div>" "The World">><</link>>
+/*************************************************************
+                      
+                        WORLD LORE
 
-<<link "<div class='entry'>the horrors</div>" "The Horrors">><</link>>
+**************************************************************/
+<div class="LTL">THE WORLD</div>
+<div class="entries">
+<<link "<div class='entry'>Underbelly</div>">> 
+    <<dialog "the underbelly">>
 
-/* <<link "<div class='entry'></div>" "The World">><</link>> */
+    <</dialog>>
+<</link>>
+<<link "<div class='entry'>virexis</div>">>
+    <<dialog "virexis">>
+        <div class="justify-text">\
+        <div class="LTL">a temporary lifeline</div>
+             Virexis is an experimental neuro-regulatory drug that was specially formulated for you to mitigate the symptoms of your deteriorating condition. Without it, the headaches that plague you intensifies—a slow, merciless crescendo of pressure that builds behind the eyes until it escalates into splintering migraines, quiet nosebleeds, and in severe episodes, halluncinations that blur the lines between lie and reality. 
 
-:: The World [noreturn]
+             If left unchecked, these episodes risk complete neural overload, rendering you vulnerable at best and catastrophically volatile at worst. 
+
+             <span>Physical Properties:</span>
+             The serum possesses a luminous, violet hue, its viscosity shimmering with an almost sentient iridescence when agitated. 
+
+             <span>Administration:</span>
+             The preferred method is by inhalation. The vials can be loaded into the dual chambers of your mask. As you breathe, the drug atomizes into a violet mist, time to release micro-doses with each inhale. To remain inconspicuous in the public, you carry an inhaler, making it seem nothing more than an ordinary condition that you have.
+
+             In emergencies, where you do not have access to your inhaler, the drug can be administered intravenously. 
+        </div>
+    <</dialog>>
+<</link>>
+<<link "<div class='entry'>stingdrop</div>">>
+    <<dialog "stingdrop">>
+        <div class="justify-text">\
+        <div class="LTL">a wonderful time</div>
+            Stingdrop a synthetic opiate notorious for its devastating grip in the underbelly of Blackhaven. It is a slow assassination packaged in delicate glass and adorned with the emblem of its creator: a scorpion poised to strike. 
+
+            <span>Physical Properties:</span>
+            A crimson elixir with glimmering 
+
+            <span>Origins & Distribution:</span>
+            Born from a black-site biolab's failure, Stingdrop was initially designed as a psychoactive enhancer for military interrogations. When deemed too volatile for controlled use, the forumla was slated for destruction—until a rogue scientist smuggled it out for the highest bidder. Now, under the dominion of Los Alacranes, it has been refined, mass-produced and distributed as a recreational drug.
+
+            <span>effects:</span>
+            A couple drops on the tongue releases:<ul>\
+            <li> Euphoria: a gilded rush as though the body has been dipped in the warmth of liquid sunlight. </li>\
+            <li> Temporal Distortion: where minutes stretches into hours and hours collapse into seconds. </li>\
+            <li> Halluncinations: that offer visions of anything the user desires.</li>\
+            </ul>\
+
+            <span>Overdose Symptoms:</span>
+            <ul><li>Phase 1: Tremors, blood-flecked sweat, and the sensation of a hundred stings of a scorpion.</li>
+            <li>Phase 2: Blissful visions eventually turn into nightmare-fueled hallucinations, causing users to begin clawing at their faces in an attempt to stop them. </li>
+            <li>Terminal Phase: Cardiac arrest, often preceded by a final, blissful sigh as the victim laughts uncontrollably at nothing.</li></ul>
+        </div>
+    <</dialog>>
+<</link>>
+</div>
+<div class="entries">
+<<link "<div class='entry'>Brass & Spirits</div>">> 
+    <<dialog "brass & spirits">>
+
+    <</dialog>>
+<</link>>
+</div>\
+/*************************************************************
+
+                        ELDRITCH LORE
+
+**************************************************************/
+<div class="LTL">THE HORRORS</div>
+<div class="entries">
+<<link "<div class='entry'>alzurahm</div>">>
+    <<dialog "alzurahm">>
+        <div class="LTL">Shadow & Void</div>
+
+    <</dialog>>
+<</link>>\
+
+<<if $korian_entry is true>>
+    <<link "<div class='entry'>Korian</div>">>
+        <<dialog "korian">>
+            <div class="LTL">Tricks & Lies</div>
+        <</dialog>>
+    <</link>>\
+<</if>>
+
+<<if $geishel_entry is true>>
+    <<link "<div class='entry'>geishel</div>">>
+        <<dialog "geishel">>
+            <div class="LTL">Death & Decay</div>
+        <</dialog>>
+    <</link>>
+<</if>>\
+</div>\
+/*************************************************************
+
+                        Organisations
+
+**************************************************************/
+<div class="LTL">Organisations</div>
+<div class="entries">
+<<link "<div class='entry'>The Night Court</div>">>
+    <<dialog "alzurahm">>
+        <div class="LTL">Shadow & Void</div>
+
+    <</dialog>>
+<</link>>\
+
+<<link "<div class='entry'>The Order</div>">>
+    <<dialog "alzurahm">>
+        <div class="LTL">Shadow & Void</div>
+
+    <</dialog>>
+<</link>>\
+</div>
+<div class="entries">
+<<link "<div class='entry'>Red Dahlia</div>">>
+    <<dialog "alzurahm">>
+        <div class="LTL">Shadow & Void</div>
+
+    <</dialog>>
+<</link>>\
+
+<<link "<div class='entry'>Los Alacranes</div>">>
+    <<dialog "alzurahm">>
+        <div class="LTL">Shadow & Void</div>
+
+    <</dialog>>
+<</link>>\
+</div>
+
+
+
+
+
 
 :: The Horrors [noreturn]
 <div class="LTL">There are but three</div>
@@ -21,14 +149,3 @@
 <</dialog>>
 <</link>>
 
-<<link "<div class='entry'>Korian</div>">>
-<<dialog "Korian">>
-    <div class="LTL">Of Tricks & Lies</div>
-<</dialog>>
-<</link>>
-
-<<link "<div class='entry'>Geishel</div>">>
-<<dialog "the underbelly">>
-    <div class="LTL">Of Death & Decay</div>
-<</dialog>>
-<</link>>
