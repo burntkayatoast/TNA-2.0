@@ -280,6 +280,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center !important;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
 }
@@ -300,7 +301,7 @@ h1 {
 }
 
 .collapsible span { 
-  margin: 0 1.3em;
+  margin: 0 1.2em;
   font-size: 110%;
   letter-spacing: 5px;
 }
@@ -336,6 +337,66 @@ h1 {
 .content-inner { 
   padding: 0 20px;
 }
+
+/* stat */
+/* .stat-bar-group {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.stat-bar-container {
+  background-color: transparent;
+  color: var(--text);
+  position: relative;
+  height: 3vh;
+  width: 100%;
+  padding: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+}
+
+.stat-bar {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.stat-bar-one {
+  background-color:rgb(52, 52, 52); 
+  left: 0;
+}
+
+.stat-bar-two {
+  background-color: var(--purple); 
+  right: 0;
+}
+
+.stat-bar-overlay-right {
+  position: absolute;
+  right: 0.5em;
+  bottom: 20%;
+  z-index: 3;
+  margin: 0 15px;
+  font-family: var(--lovelo);
+}
+
+.stat-bar-overlay-left {
+  position: absolute;
+  left: 0.5em;
+  bottom: 20%;
+  z-index: 3;
+  margin: 0 15px;
+  font-family: var(--lovelo);
+}
+
+.stat-title { 
+  font-family: var(--lovelo);
+  text-align: center !important;
+  letter-spacing: 5px;
+} */
 
 /********************************
               NOTIFY
