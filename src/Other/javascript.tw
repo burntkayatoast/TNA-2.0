@@ -1,4 +1,5 @@
 :: StoryScript [script]
+//  collapsible button
 $(document).on(":passagedisplay", function () {
   console.log("Passage displayed!"); // Debugging line
   $('.collapsible').off('click').on('click', function () {
@@ -17,6 +18,7 @@ $(document).on(":passagedisplay", function () {
     }
   });
 });
+
 // reset passage to top
 $(document).on(":passagedisplay", function() {
 	$("#passages").scrollTop(0);
@@ -56,7 +58,22 @@ $(document).on(':dialogopen', function (ev) {
 
 // Autosave configuration
 Config.saves.maxAutoSaves = 1; // Enable autosaving with one autosave slot
+// Always allow autosaves unless the passage has the 'noreturn' tag
+Config.saves.isAllowed = function (saveType) {
+    if (saveType === Save.Type.Auto) {
+        return !tags().includes('noreturn'); // Autosaves are allowed unless the passage has the 'noreturn' tag
+    }
+    return true; // Manual saves are always allowed
+};
 
+// Automatically generate save descriptions
+Config.saves.descriptions = function (saveType) {
+    const chapter = State.getVar("$gamechapter") || "Unknown Chapter"; // Default to "Unknown Chapter" if $gamechapter is not set
+    const name = State.getVar("$name") || "Unnamed"; // Default to "Unnamed" if $name is not set
+
+    // Format the save description as "Chapter - Name"
+    return `${chapter} - ${name}`;
+};
 
 // force fullscreen portrait mode on mobile
 function lock (orientation) {
