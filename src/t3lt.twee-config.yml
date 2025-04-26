@@ -9,3 +9,5 @@ sugarcube-2:
     collapsible:
       name: collapsible
       container: true
+    updateStat:
+      name: updateStat
