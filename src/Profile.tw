@@ -1,32 +1,80 @@
+/******************************************************
+
+                      PROFILE PAGES
+
+*******************************************************/
 :: profile_page [noreturn]
 <h1>PROFILE</h1>\
 <div class="profile-container">
     <span class="profile-selection-tab" data-passage="profile_page"> <<link "<span class='profile-selected'>you.</span>">><</link>> </span>
     <span class="profile-selection-tab" data-passage="stats_page"> <<link "stats.">><</link>> </span>
     <span class="profile-selection-tab" data-passage="relationship_page"> <<link "relationships.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="others_page"> <<link "others.">><</link>> </span>
 </div>
 <div class="divider"></div>
 You go by $name $surname, your true name having been lost to you since you woke up with no memory of who you were or where you came from. Since then, you were taken in by The Night Court, trained and raised to be a Shadow—a mercenary solely under the employ of The Court. 
 
 You have $hair_len, $hair_type, $hair_colour hair. Your eyes are $eyes and you have $skin skin. 
+/******************************************************
+
+                      STATS PAGES
+
+*******************************************************/
 :: stats_page [noreturn]
 <h1>STATS</h1>\
 <div class="profile-container">
     <span class="profile-selection-tab" data-passage="profile_page"> <<link "you.">><</link>> </span>
     <span class="profile-selection-tab" data-passage="stats_page"> <<link "<span class='profile-selected'>stats.</span>">><</link>> </span>
     <span class="profile-selection-tab" data-passage="relationship_page"> <<link "relationships.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="others_page"> <<link "others.">><</link>> </span>
 </div>
 <div class="divider"></div>
+/* <div class="stat-title">humorous / genuine</div>
+<div class="stat-bar-group">
+  <div class="stat-bar-container">
+    <div class="stat-bar-overlay-left"><<=$stats.humorous>>%</div>
+    <div class="stat-bar stat-bar-one" id="statone-stat"></div>
+    <div class="stat-bar-overlay-right"><<=$stats.genuine>>%</div>
+    <div class="stat-bar stat-bar-two" id="stattwo-stat"></div>
+  </div>
+</div>
 
+<div class="stat-title">aloof / charming</div>
+<div class="stat-bar-group">
+  <div class="stat-bar-container">
+    <div class="stat-bar-overlay-left"><<=$stats.aloof>>%</div>
+    <div class="stat-bar stat-bar-one" id="statthree-stat"></div>
+    <div class="stat-bar-overlay-right"><<=$stats.charm>>%</div>
+    <div class="stat-bar stat-bar-two" id="statfour-stat"></div>
+  </div>
+</div>
+
+<div class="stat-title">ruthless / merciful</div>
+<div class="stat-bar-group">
+  <div class="stat-bar-container">
+    <div class="stat-bar-overlay-left"><<=$stats.ruthless>>%</div>
+    <div class="stat-bar stat-bar-one" id="statfive-stat"></div>
+    <div class="stat-bar-overlay-right"><<=$stats.merciful>>%</div>
+    <div class="stat-bar stat-bar-two" id="statsix-stat"></div>
+  </div>
+</div> */
+
+/******************************************************
+
+                  RELATIONSHIPS PAGES
+
+*******************************************************/
 :: relationship_page [noreturn]
 <h1>RELATIONSHIPS</h1>\
 <div class="profile-container">
     <span class="profile-selection-tab" data-passage="profile_page"> <<link "you.">><</link>> </span>
     <span class="profile-selection-tab" data-passage="stats_page"> <<link "stats.">><</link>> </span>
     <span class="profile-selection-tab" data-passage="relationship_page"> <<link "<span class='profile-selected'>relationships.</span>">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="others_page"> <<link "others.">><</link>> </span>
 </div>
 <div class="divider"></div>
-<div class="collapsible-container">
+/*********************** ILYA ********************/
+<div class="collapsible-container">\
   <button class="collapsible"><span>01 ilya Roson</span></button>\
   <div class="content">
     <div class="content-inner">\
@@ -34,10 +82,10 @@ You have $hair_len, $hair_type, $hair_colour hair. Your eyes are $eyes and you h
 
         ''Description:'' They have shoulder-length, wavy, moondust hair with eyes of grey and skin like porcelain. They stand at 5'11. Their palms are scarred, something they keep hidden under a pair of worn fingerless gloves. Something had happened to them when they were young. Something they refused to tell you.
 
-        Ilya is a spy. A skilled individual in infiltration and extraction. When The Court needed someone to get information, they were always the person they went to. Now, you learn that they've been playing you the entire time you've known them, having revealed themself as an Enforcer of The Order when they lead you to an ambush, like lamb to the slaughter. 
+        Ilya is a spy. A skilled individual in infiltration and extraction. When The Court needed someone to get information, they were always the person they went to. Now, you learn that they've been playing you the entire time you've known them, having revealed themself as an Enforcer of The Order when they led you to ambush. Like lamb to the slaughter. 
     </div>
   </div>\
-
+/*********************** RHIAN ***********************/
   <button class="collapsible"><span>02 rhian scott</span></button>\
   <div class="content">
     <div class="content-inner">\
@@ -45,49 +93,111 @@ You have $hair_len, $hair_type, $hair_colour hair. Your eyes are $eyes and you h
 
     ''Description:'' <<if $r_gender is "female">>They have long<<else>>short<</if>>, dark brown, curly hair with eyes like amber and skin kissed by the sun. They stand at 5'8. There's a beauty mark just below the underside of their left eye and a small scar marking their right cheek.
 
-    Rhian is a Red Dahlia—a thug and a criminal. They're sly, one with a sharp tongue and a sharper blade. 
+    Rhian is a Red Dahlia—a thug and a criminal. They're sly, one with a sharp tongue and an even sharper blade. You don't know what their true goal is, but right now they seem to be on board with helping you in whatever way they can. 
     </div>
   </div>\
-
+/*********************** VIRA *************************/
   <button class="collapsible"><span>03 vira duval</span></button>\
   <div class="content">
     <div class="content-inner">\
-      
+      ''Relationship:'' She doesn't trust you. She knows there is something you aren't telling them.
+
+      ''Description:'' She has back-length, silken, raven hair with eyes of the blue sky and the skin of ivory. She stands at 6'0, taller in heels. There are scars that she keeps hidden—almost like they're secrets. She is the twin sister of Aurius. 
+
+      Vira is an Enforcer whom you've had the displeasure of being shot by. Had you not have had that encounter with her, you would have thought that she was just an average woman with refined tastes and //not// an excellent marksman or a skilled combatant. 
+      /* Best not poke the bear, lest you wish to be mauled.*/\
     </div>
   </div>\
-
+/************************ AURIUS ************************/
   <button class="collapsible"><span>04 Aurius duval</span></button>\
   <div class="content">
     <div class="content-inner">\
-      
-    </div>
-  </div>\
+      ''Relationship:'' He wants to trust you but finds it difficult considering he knows next to nothing about who you are or where you came from. 
 
-  <button class="collapsible"><span> 05 alzurahm</span></button>\
-  <div class="content">
-    <div class="content-inner">\
-      
-    </div>
-  </div>\
+      ''Description:'' He has short, slick-backed, raven hair and similar to his sister, possesses eyes sky blue eyes and skin of ivory. He stands at 5'10. There's a sliver of a scar across the right side of his bottom lip, not too noticeable until the light shines on it at just the right angle. He is the twin brother of Vira. 
 
-  <button class="collapsible"><span>06 Tiberius</span></button>\
-  <div class="content">
-    <div class="content-inner">\
-      
+      Aurius is scion for everything you've learned to hate—an enforcer of The Order with the unmatched skills of a swordsman. He's exactly what you'd expect from your basic poster boy of The Order—strong, polite and by the book.
     </div>
   </div>\
+/******************************************************
 
-  <button class="collapsible"><span>07 Faustus</span></button>\
-  <div class="content">
-    <div class="content-inner">\
-      
-    </div>
-  </div>\
+                      OTHERS PAGES
 
-  <button class="collapsible"><span> 08 dahlia</span></button>\
-  <div class="content">
-    <div class="content-inner">\
-      
-    </div>
-  </div>\
+*******************************************************/
+:: others_page
+<h1>OTHERS</h1>\
+<div class="profile-container">
+    <span class="profile-selection-tab" data-passage="profile_page"> <<link "you.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="stats_page"> <<link "stats.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="relationship_page"> <<link "relationships.">><</link>> </span>
+    <span class="profile-selection-tab" data-passage="others_page"> <<link "<span class='profile-selected'>others.</span>">><</link>> </span>
 </div>
+<div class="divider"></div>
+/******************* ALZURAHM ******************/
+<div class="collapsible-container">\
+  <button class="collapsible"><span>01 alzurahm</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+        ''Relationship:'' They betrayed you and left you for dead. It's safe to say that they're no longer in your good graces at the moment. 
+
+        ''Description:'' They have shoulder-length, wavy, moondust hair with eyes of grey and skin like porcelain. They stand at 5'11. Their palms are scarred, something they keep hidden under a pair of worn fingerless gloves. Something had happened to them when they were young. Something they refused to tell you.
+
+        Ilya is a spy. A skilled individual in infiltration and extraction. When The Court needed someone to get information, they were always the person they went to. Now, you learn that they've been playing you the entire time you've known them, having revealed themself as an Enforcer of The Order when they led you to ambush. Like lamb to the slaughter. 
+    </div>
+  </div>\
+/********************** TIBERIUS *********************/
+  <button class="collapsible"><span>02 Tiberius</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+    ''Relationship:'' <<if $relationship_Ti is "father figure">>He's like a father to you, perhaps the only person in this world that you can truly trust.<<else>>You're very close with him, closer than you are to anyone else in the whole of The Court. Perhaps, one day, you may call him your father but today is not that day.<</if>>
+
+    ''Description:'' He has thick medium, salt & pepper hair that often spills over in strands and has jade coloured eyes paired with rosy beige skin.
+
+    Ever since you were taken in by The Court, he had taken it upon himself to raise and teach in the way of a Shadow. What you know, you know it from him. 
+    </div>
+  </div>\
+/*********************** ELIAS ***********************/
+  <button class="collapsible"><span>03 Elias</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      ''Relationship:'' She doesn't trust you. She knows there is something you aren't telling them.
+
+      ''Description:'' She has back-length, silken, raven hair with eyes of the blue sky and the skin of ivory. She stands at 6'0, taller in heels. There are scars that she keeps hidden—almost like they're secrets. She is the twin sister of Aurius. 
+
+      Vira is an Enforcer whom you've had the displeasure of being shot by. Had you not have had that encounter with her, you would have thought that she was just an average woman with refined tastes and //not// an excellent marksman or a skilled combatant. 
+      /* Best not poke the bear, lest you wish to be mauled.*/\
+    </div>
+  </div>\
+/********************** FAUSTUS **********************/
+  <button class="collapsible"><span>04 Faustus</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      ''Relationship:'' He's kind to you, has been since you were young. Apart from Tiberius, he might be the only other person that might trust. 
+
+      ''Description:'' He has short black hair, impossibly so and has eyes like molten gold and sandy beige skin. 
+
+      He has often brought you gifts and always told you stories of old lost histories. He is a councilman of The Court, perhaps the most important one. Other council members dislike his favourtism of you, but none dare to speak against it.
+    </div>
+  </div>\
+/************************ DAHLIA **************************/
+  <button class="collapsible"><span>05 dahlia</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      ''Relationship:'' She likes you and finds you intriguing. She would very much like it if you came to work for her instead. 
+
+      ''Description:'' She has a shaved head with deep brown eyes that seem to shift hazel under the light and dark umber skin. She is never without a pair of golden chain earrings that adorn her ears or a striking scarlet outfit. 
+
+      Dahlia is the leader of the Red Dahlias, a formiddable foe who has a  grasp in almost every corner of the city's underbelly. It would be foolish to make an enemy out of her. She knows things, precious things and she's not one to hesitate to use it against you if it helps her and her people.    
+    </div>
+  </div>\
+/******************** GENERAL ADAI ********************/
+  <button class="collapsible"><span>06 General Adair</span></button>\
+  <div class="content">
+    <div class="content-inner">\
+      ''Relationship:'' There is something he's not telling you. 
+
+      ''Description:'' He has medium, wavy, brown hair and light hazel eyes and bronze skin. 
+
+      Adair is the General of The Order.  
+    </div>
+  </div>\ 
